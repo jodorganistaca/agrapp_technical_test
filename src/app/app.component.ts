@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Movies';
   users = [{name: "test"},{name: "ajam"}]
+
 }

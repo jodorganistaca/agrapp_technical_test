@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 import { Movie } from '../movie/movie';
 import { MovieService } from '../movie.service';
@@ -6,7 +6,7 @@ import { MovieService } from '../movie.service';
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
-  styleUrls: ['./movies-list.component.sass']
+  styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent implements OnInit {
   moviesTrending: Movie[] | undefined;
@@ -19,9 +19,13 @@ export class MoviesListComponent implements OnInit {
 
   getMoviesTrending(): void {
     this.movieService.getTrendingMovies("day").subscribe(movTrdRes => {
-      console.log("holaaaa ", movTrdRes)
       this.moviesTrending = movTrdRes
-      console.log("adioos ", this.moviesTrending)
+    });
+  }
+
+  getTvsTrending(): void {
+    this.movieService.getTrendingTvs("day").subscribe(movTrdRes => {
+      this.moviesTrending = movTrdRes
     });
   }
 

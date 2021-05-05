@@ -25,10 +25,17 @@ export class MovieService {
 
  }
 
- getTrendingMovies(timeWindow: string): Observable<Movie[]> {
-  return this.http.get<Movie[]>(`${this.apiMovie}/trending/movie/${timeWindow}?api_key=${this.apiKey}`)
-    .pipe(
-      map(res => res['results'])
-    );
-}
+  getTrendingMovies(timeWindow: string): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.apiMovie}/trending/movie/${timeWindow}?api_key=${this.apiKey}`)
+      .pipe(
+        map(res => res['results'])
+      );
+  }
+
+  getTrendingTvs(timeWindow: string): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.apiMovie}/trending/tv/${timeWindow}?api_key=${this.apiKey}`)
+      .pipe(
+        map(res => res['results'])
+      );
+    }
 }
