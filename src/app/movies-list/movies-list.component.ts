@@ -1,7 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-
-import { Movie } from '../movie/movie';
-import { MovieService } from '../movie.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movies-list',
@@ -9,24 +6,10 @@ import { MovieService } from '../movie.service';
   styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent implements OnInit {
-  moviesTrending: Movie[] | undefined;
+  @Input() moviesTrending: any;
   
-  constructor(private movieService: MovieService) { }
-
   ngOnInit(): void {
-    this.getMoviesTrending()
-  }
-
-  getMoviesTrending(): void {
-    this.movieService.getTrendingMovies("day").subscribe(movTrdRes => {
-      this.moviesTrending = movTrdRes
-    });
-  }
-
-  getTvsTrending(): void {
-    this.movieService.getTrendingTvs("day").subscribe(movTrdRes => {
-      this.moviesTrending = movTrdRes
-    });
-  }
+    
+  }  
 
 }
