@@ -38,4 +38,12 @@ export class MovieService {
         map(res => res['results'])
       );
     }
+
+  getMovieById(id: string, mediaType: string):Observable<Movie> {
+    console.log("service ", id)
+    return this.http.get<Movie>(`${this.apiMovie}/${mediaType}/${id}?api_key=${this.apiKey}`)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
 }
