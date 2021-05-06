@@ -1,0 +1,50 @@
+<div class="header" style="background-image:url({{'http://image.tmdb.org/t/p/w1920_and_h800_multi_faces' + movie.backdrop_path}});">
+    <div class="custom_bg"> 
+        <div class="single_column">
+            <section id="original_header" class="images inner">
+                <div class="poster_wrapper true">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image">
+                              {{movie.popularity}}
+                          </div>
+                          <mat-card-title>{{tv? movie.title : movie.name}}</mat-card-title>
+                          <mat-card-subtitle>{{movie.release_date}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="{{'http://image.tmdb.org/t/p/w185' + movie.poster_path}}" alt="Photo of a Shiba Inu">
+                        
+                    </mat-card>
+                </div>
+                <div class="header_poster_wrapper true">
+                    <section class="header poster">
+                        <div class="title ott_true">
+                            <h2 class="11">
+                                <a>{{tv? movie.title : movie.name}}</a>
+                                <span class="tag release_date"> ({{tv? movie.release_date : movie.first_air_date}})</span>
+                            </h2>
+                            <div class="facts">
+                                <span class="certification"></span>
+                                <span class="release"></span>
+                                <span class="genres" *ngFor="let g of gnrs"> {{g.name}} </span>
+                                <span class="runtime"></span>
+                            </div>
+                        </div>
+                        <ul class="auto actions"></ul>
+                        <div class="header_info">
+                            <h3>Overview</h3>
+                            <div class="overview">
+                                <p>
+                                    {{movie.overview}}
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div> 
+</div>
+
+          
+
+      
