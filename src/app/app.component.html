@@ -302,6 +302,7 @@
       visibility: hidden;
     }
   }
+
 </style>
 
 <div class="content" role="main">
@@ -309,7 +310,6 @@
   <div>
     <button (click)="getMoviesTrending()">movies</button>
     <button (click)="getTvsTrending()">tv</button>
-
     <app-movies-list class="wrapper" [moviesTrending] = "moviesTrending"></app-movies-list>
   </div>
 

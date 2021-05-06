@@ -14,6 +14,7 @@ export class MovieDescriptionComponent implements OnInit {
   id: string | undefined | null;
   media: string | undefined | null;
   tv = false;
+  gnrs = [{name: String}]
 
   constructor(
     private route: ActivatedRoute,
@@ -27,8 +28,11 @@ export class MovieDescriptionComponent implements OnInit {
       this.id = params.get('id');   
       this.media = params.get('media');   
       if(this.id != undefined && this.id != null && this.media != undefined && this.media != null){
+        this.media == "tv" ? this.tv = false : this.tv = true;
         this.service.getMovieById(this.id, this.media).subscribe(res => {
+          console.log("reeees ", res)
           this.movie = res
+          this.gnrs = res.genres
         });
       }else{
         this.service.getMovieById("460465", "movie").subscribe(res => {

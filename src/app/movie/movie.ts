@@ -3,9 +3,11 @@ export interface Movie {
     title: string;
     release_date: string;
     poster_path: string;
+    backdrop_path: string;
     overview: string;
     popularity: number;
     vote_average: number;
     name: string;
     first_air_date: string;
+    genres: []
   }
