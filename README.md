@@ -1,6 +1,30 @@
+
+
+
 # MyApp
 
+Web page to visualize movies and tvs information.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+
+## Demo
+
+![demo](https://user-images.githubusercontent.com/21698526/117244740-37d67780-adff-11eb-9449-6a98a0b0a885.mp4)
+
+## Prerequisites
+
+All the listed prerrequisites must be installed in order to use the application.
+
+* [Node js](https://nodejs.org/en/)
+* [Angular](https://angular.io/)
+
+Also you have to replace the API_KEY in the file /src/enviroment
+```
+export const environment = {
+  production: false,
+  API_KEY: Here
+};
+```
+
 
 ## Development server
 
